@@ -29,11 +29,11 @@ function App() {
   setUserCategory(event.target.value)
  }
 
- function handleSubmit(event){
+ function onTaskFormSubmit(event){
   event.preventDefault()
   const newTask = {
-    text: details,
-    category: userCategory
+    category: userCategory,
+    text: details
   }
   if (details <= 0) {return alert("You must input data!")}
 
@@ -50,7 +50,7 @@ function App() {
       categories={CATEGORIES} 
       details={details} 
       onUserInput={handleChange} 
-      onTaskFormSubmit={handleSubmit}
+      onTaskFormSubmit={onTaskFormSubmit}
       onUserSelect={handleSelect}
       userCategory={userCategory}/>
       <TaskList tasks={tasks}/>
